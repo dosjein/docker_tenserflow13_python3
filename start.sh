@@ -18,8 +18,8 @@ echo 'Flesh Start'
 
 if [  -f /opt/classificator/server.py ]; then
 	if ! screen -list | grep -q "flesk_server"; then
-		echo "screen -d -m -S flesk_server bash -c 'python /opt/classificator/server.py'"
-	    screen -d -m -S flesk_server bash -c 'python /opt/classificator/server.py'
+		echo "screen -d -m -S flesk_server bash -c 'export FLASK_APP=/opt/classificator/server.py;flask run  --host=0.0.0.0 --port 5002'"
+	    screen -d -m -S flesk_server bash -c 'export FLASK_APP=/opt/classificator/server.py;flask run  --host=0.0.0.0 --port 5002'
 	else
 	    echo "flesk is already runing"
 	fi

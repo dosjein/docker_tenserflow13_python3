@@ -5,7 +5,7 @@ alias lah='ls -lah'
 alias host="/sbin/ip route|awk '/default/ { print $3 }'"
 alias master="/sbin/ip route|awk '/default/ { print $3 }'"
 alias stopflesk="screen -S flesk -X quit"
-alias startflesk="screen -d -m -S flesk_server bash -c 'python /opt/classificator/server.py'"
+alias startflesk="screen -d -m -S flesk_server bash -c 'export FLASK_APP=/opt/classificator/server.py;flask run  --host=0.0.0.0 --port 5002'"
 alias restartflesk="stopflesk;startflesk"
 
 function getflesk {
